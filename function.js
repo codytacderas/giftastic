@@ -12,12 +12,13 @@ $("#submit-button").on("click", function() {
 	  var results = response.data;
 	  console.log(results);
 	  for (var i = 0; i < results.length; i++) {
-	    var gifDiv = $("<div class='item'>");
+	    var gifDiv = $('<div class="item">');
 	    var rating = results[i].rating;
+	    console.log(results[i].rating);
 	    var p = $("<p>").text("Rating: " + rating);
 	    var imageUrl = response.data.image_original_url;
+	    console.log(imageUrl);
 	    var queryImage = $("<img>");
-	    queryImage.attr("src", results[i].images.fixed_height.url);
         queryImage.attr("src", imageUrl);
         queryImage.attr("alt", "gEtTin GiPhy");
 	    gifDiv.prepend(p);
